@@ -1,0 +1,40 @@
+package ArrayProgram;
+
+public class Student {
+    int stdId;
+    String stdName;
+    double stdmark;
+    Student(int id, String name, double mark){
+        stdId = id;
+        stdName = name;
+        stdmark = mark;
+    }
+}
+
+package ArrayProgram;
+
+import java.util.Scanner;
+
+public class StudentDetails {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Student[] students = new Student[5];
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Enter the Student Id ");
+            int id = sc.nextInt();
+            sc.nextLine();
+            System.out.print("Enter the Student Name ");
+            String name =sc.nextLine();
+            System.out.print("Enter the Student Marks ");
+            double marks = sc.nextDouble();
+            students[i] = new Student(id,name,marks);
+
+        }
+        System.out.println("Students Details ");
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Student id "+students[i].stdId+ " Student name " +students[i].stdName+ " Marks " +students[i].stdmark);
+
+        }
+
+    }
+}
