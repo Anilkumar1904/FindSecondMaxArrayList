@@ -1,0 +1,40 @@
+package ArrayProgram;
+
+public class Book {
+    int bookId;
+    String bookName;
+    double price;
+    Book(int id, String bookName, double price){
+        bookId = id;
+        bookName = bookName;
+        price = price;
+    }
+}
+
+package ArrayProgram;
+
+import java.util.Scanner;
+
+public class BookDetails {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Book[] books = new Book[4];
+        for (int i = 0; i < 4; i++) {
+            System.out.print("Enter the book id ");
+            int id = sc.nextInt();
+            sc.nextLine();
+            System.out.print("Enter the book Name ");
+            String name = sc.nextLine();
+            System.out.print("Enter the book price  ");
+            double price = sc.nextDouble();
+            books[i] = new Book(id, name, price);
+
+        }
+        System.out.println("Book Details ");
+        for (int i = 0; i < 4; i++) {
+            System.out.println( " id " +books[i].bookId+ " Name " + books[i].bookName+ " Price " +books[i].price
+            );
+        }
+
+    }
+}
